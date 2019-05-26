@@ -1,0 +1,70 @@
+C:\Users\andre\source\repos\Cifras\bin\Debug\Cifras.exe
+C:\Users\andre\source\repos\Cifras\bin\Debug\Cifras.pdb
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.csprojAssemblyReference.cache
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.Form1.resources
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.Line.resources
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.Properties.Resources.resources
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.csproj.GenerateResource.cache
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.exe
+C:\Users\andre\source\repos\Cifras\obj\Debug\Cifras.pdb
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\fim da palavra.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\letras.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\numeros.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ak.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\al.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\am.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\an.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ana1.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anb2.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anc3.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\and4.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ane5.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anf6.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ang7.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anh8.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ani9.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anj0.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\anular.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ao.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ap.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\aq.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ar.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\as.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\at.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\au.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\av.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\aw.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ax.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\ay.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\az.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Imagens\erro_atencao.PNG
+C:\Users\andre\source\repos\Cifras\bin\Debug\Cifras.exe.config
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Alfabeto_fonetico.dat
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\a.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\b.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\c.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\d.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\e.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\f.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\g.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\h.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\i.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\j.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\k.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\l.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\m.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\n.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\o.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\p.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\q.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\r.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\s.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\t.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\u.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\v.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\w.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\x.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\y.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Dicionario\Codigo Chines\z.png
+C:\Users\andre\source\repos\Cifras\bin\Debug\Fontes\codigochines.ttf
