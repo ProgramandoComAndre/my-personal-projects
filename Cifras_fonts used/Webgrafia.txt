@@ -1,0 +1,3 @@
+A fonte de braille falso foi criada por mim...
+
+Fonte do codigo chines retirada do site: http://www.lince-contente.pt/caderno/tecnica-escutista/codigo-chines/

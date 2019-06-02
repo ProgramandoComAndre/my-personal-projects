@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 
+
 namespace Cifras
 {
     public partial class Form1 : Form
@@ -17,6 +18,31 @@ namespace Cifras
         Dictionary<int, string> letrasComNumero = new Dictionary<int, string>();
         PrivateFontCollection fontCollection = new PrivateFontCollection();
         List<Image> animation;
+        Dictionary<char, string> morseFiles = new Dictionary<char, string>();
+
+
+
+        void ConstruirCodigoMorse()
+        {
+            
+            DirectoryInfo directoryInfo = new DirectoryInfo(@"Codigo morse");
+            List<FileInfo> fi = new List<FileInfo>();
+            fi.AddRange(directoryInfo.GetFiles());
+            string letras = "abcdefghijklmnopqrstuvwxyz";
+            foreach(char c in letras)
+            {
+                string cUpper = c.ToString().ToUpper();
+                string filename = fi.Find(x => x.FullName.Contains("Morse Code Alphabet " + cUpper)).FullName;
+                morseFiles.Add(c, filename);
+            }
+            string numeros = "0123456789";
+            foreach(char c in numeros)
+            {
+                string filename = fi.Find(x => x.FullName.Contains("numero" + c)).FullName;
+                morseFiles.Add(c, filename);
+            }
+            
+        }
         string[,,] quadrados = new string[,,]
         {
             {
@@ -74,8 +100,12 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             InitializeComponent();
             iniciarDicionario();
             fontCollection.AddFontFile(@"Fontes/codigochines.ttf");
-            Font font = new Font(fontCollection.Families[0], 30);
+            fontCollection.AddFontFile(@"Fontes/braille-falso.ttf");
+            Font font = new Font(fontCollection.Families[1], 30);
             rtxt_encriptado.Font = font;
+            txt_braille_encriptado.Font = new Font(fontCollection.Families[0], 15);
+            ConstruirCodigoMorse();
+            
             
             
 
@@ -214,7 +244,7 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
         private void Form1_Load(object sender, EventArgs e)
         {
             
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -229,58 +259,9 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txt_aEncriptar_Braille.Text == "") return;
-            List<Bitmap> imagemFinal = new List<Bitmap>();
-            foreach(char c in txt_aEncriptar_Braille.Text.ToLower())
-            {
-                if (c == ' ')
-                    continue;
-                Bitmap bmp = new Bitmap(100, 100);
-                Graphics g = Graphics.FromImage(bmp);
-                Tuple<int, int, int> posicao = GetCharIndexes(c.ToString());
-                int quadrado = posicao.Item1+1;
-                int linha = posicao.Item2+1;
-                int coluna = posicao.Item3+1;
+            txt_braille_encriptado.Text = txt_aEncriptar_Braille.Text;
 
-                int xx = 0;
-                int y = 0;
-                for (int ii = 0; ii < quadrado; ii++)
-                {
-                    xx = ii * 10;
-                    g.FillEllipse(Brushes.Black, xx, y, 7, 7);
-                }
-
-                y = 20;
-                xx = 0;
-                for(int ii = 0; ii < linha; ii++)
-                {
-                    xx = ii * 10;
-                    g.FillEllipse(Brushes.Black, xx, y, 7, 7);
-                }
-
-                xx = 0;
-                y = 40;
-                for(int ii = 0; ii < coluna;ii++)
-                {
-                    xx = ii * 10;
-                    g.FillEllipse(Brushes.Black, xx, y, 7, 7);
-                }
-
-                imagemFinal.Add(bmp);
-
-            }
-
-            Bitmap bmpFinal = new Bitmap(100 * imagemFinal.Count, 100);
-            Graphics gg = Graphics.FromImage(bmpFinal);
-            int x = 0;
-            int i = 0;
-            foreach(Bitmap bmp in imagemFinal)
-            {
-                x = 103 * i;
-                gg.DrawImage(bmp, x, 0);
-                i++;
-            }
-            pic_braille.Image = bmpFinal;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -315,7 +296,7 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
                 for (; j < chars.Length; j++)
                 {
                     listaChars.Add(chars[j]);
-                    if (j + 1 == 10 || j + 1 == 20)
+                    if (j + 1 == 10 || j + 1 == 20 || j+1 == 30)
                     {
                         j = j + 1;
                         break;
@@ -326,7 +307,7 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
                
 
                 dataCifra.Add(index, listaChars);
-                Console.WriteLine(dataCifra.Count);
+                
                       
             }
 
@@ -334,14 +315,32 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             {
                 int identificador = -1;
                 int indexLista = -1;
+                int valorAColocar = -1;
+                if(c == ' ')
+                {
+                    txt_encriptado_data.Text += ' ';
+                    continue;
+                }
                 foreach (int index in indexes)
                 {
                     foreach(char caractere in dataCifra[index])
                     {
                         if(c == caractere)
                         {
+                            
                             identificador = index;
-                            indexLista = dataCifra[index].IndexOf(c);
+
+
+                            
+                            if (dataCifra[index].IndexOf(c) == 9)
+                            {
+                                valorAColocar = 0;
+                            }
+                            else
+                            {
+                                valorAColocar = dataCifra[index].IndexOf(c) + 1;
+                            }
+                           
                             goto sair;
 
 
@@ -349,8 +348,7 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
                     }
                 }
 
-            sair: indexLista += 1;
-                txt_encriptado_data.Text += identificador.ToString() + indexLista.ToString();
+            sair: txt_encriptado_data.Text += identificador.ToString() + valorAColocar.ToString();
             }
         }
 
@@ -369,6 +367,213 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             {
                 txt_encriptado_invertido.Text += cifra[c];
             }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            List<int> indexes = new List<int>();
+            txt_data_desencriptado.Text = "";
+            foreach (char c in txt_decryptor_data.Text)
+            {
+                int i = int.Parse(c.ToString());
+                indexes.Add(i);
+            }
+            /*foreach(int i in indexes)
+            {
+                Console.WriteLine(i);
+            }
+            */
+            
+            Dictionary<int, List<char>> dataCifra = new Dictionary<int, List<char>>();
+            string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            int j = 0;
+
+            foreach (int index in indexes)
+            {
+                List<char> listaChars = new List<char>();
+                for (; j < chars.Length; j++)
+                {
+                    listaChars.Add(chars[j]);
+                    if (j + 1 == 10 || j + 1 == 20 || j + 1 == 30)
+                    {
+                        j = j + 1;
+                        break;
+                    }
+
+                }
+
+
+
+                dataCifra.Add(index, listaChars);
+
+
+            }
+
+           /*foreach(int index in indexes)
+           {
+                for(int i = 0; i < dataCifra[index].Count;i++)
+                {
+                    Console.WriteLine("Linha("+index+","+(i+1)+")" + "- " + dataCifra[index][i]);
+                }
+           }
+           */
+
+            string encriptada = txt_decryptor_texto.Text;
+            string[] array = encriptada.Split(' ');
+            List<string> palavras = new List<string>();
+            palavras.AddRange(array);
+            foreach (string palavra in palavras)
+            {
+                int pares = palavra.Length / 2;
+                encriptada = palavra;
+
+                List<string> divided = new List<string>();
+                for (int i = 0; i < pares; i++)
+                {
+                    string par = "";
+
+                    for (int k = 0; k < 2; k++)
+                    {
+                        par += encriptada[k];
+                    }
+                    encriptada = encriptada.Remove(0, 2);
+                    divided.Add(par);
+                }
+                string desencriptado = "";
+                
+
+
+                foreach (string par in divided)
+                {
+                    int linha = int.Parse(par[0].ToString());
+                    int coluna = int.Parse(par[1].ToString()) - 1;
+                    if (coluna == -1)
+                    {
+                        coluna = 9;
+                    }
+
+                    char c = dataCifra[linha][coluna];
+                    desencriptado += c;
+                }
+                string espaco = " ";
+                if(palavra.IndexOf(palavra) +1 == palavras.Count)
+                {
+                    txt_data_desencriptado.Text += desencriptado;
+                }
+                else
+                {
+                    txt_data_desencriptado.Text += desencriptado + espaco;
+                }
+                
+            }
+            
+            
+        }
+
+        private void btn_encriptar_an_Click(object sender, EventArgs e)
+        {
+            
+            int numero = int.Parse(txt_primeira_letra.Text);
+            int numeroInicial = numero;
+            int numeroFinal = -1;
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            numeroFinal = numeroInicial + alfabeto.Length;
+            Dictionary<int, char> cifra = new Dictionary<int, char>();
+            foreach(char c in alfabeto)
+            {
+                cifra.Add(numero, c);
+                numero++;
+                
+            }
+            foreach(char c in txt_normal_an.Text.ToLower())
+            {
+                for(int i = numeroInicial; i <= numeroFinal;i++)
+                {
+                    if(c == cifra[i])
+                    {
+                        txt_encriptado_an.Text += i+ " ";
+                        break;
+                    }
+                }
+            }
+        }
+
+        void TocarMorse()
+        {
+            foreach(char c in txt_normal_morse.Text)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    listBox1.Items.Add(c);
+                });
+            }
+            string str = txt_normal_morse.Text.ToLower();
+            for(int i = 0; i < txt_normal_morse.Text.ToLower().Length;i++)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    listBox1.SetSelected(i, true);
+                });
+                string filename = morseFiles[txt_normal_morse.Text.ToLower()[i]];
+                md_morse.URL = filename;
+                md_morse.Ctlcontrols.play();
+                Thread.Sleep(1000);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    listBox1.SetSelected(i, false);
+                });
+            }
+        }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            Thread thread = new Thread(TocarMorse);
+            thread.Start();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txt_encriptado_ra.Text = "";
+            Dictionary<char, string> vogais = new Dictionary<char, string>();
+            vogais.Add('a',"I");
+            vogais.Add('e', "II");
+            vogais.Add('i', "III");
+            vogais.Add('o', "IV");
+            vogais.Add('u', "V");
+            Dictionary<char, int> consoantes = new Dictionary<char, int>();
+            string consoantesStr = "bcdfghjklmnpqrstvwxyz";
+            for(int i = 0; i < consoantesStr.Length;i++)
+            {
+                consoantes.Add(consoantesStr[i], i + 1);
+            }
+            string normal = txt_normal_ra.Text.ToLower();
+            foreach(char c in normal)
+            {
+                if(c == ' ')
+                {
+                    txt_encriptado_ra.Text += " ";
+                    continue;
+                }
+                if(vogais.ContainsKey(c))
+                {
+                    txt_encriptado_ra.Text += vogais[c]+" ";
+                }
+                else
+                {
+                    txt_encriptado_ra.Text += consoantes[c]+" ";
+                }
+            }
+            txt_encriptado_ra.Text = txt_encriptado_ra.Text.TrimEnd(' ');
+
         }
     }
 }
