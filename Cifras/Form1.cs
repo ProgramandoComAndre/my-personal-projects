@@ -19,7 +19,7 @@ namespace Cifras
         PrivateFontCollection fontCollection = new PrivateFontCollection();
         List<Image> animation;
         Dictionary<char, string> morseFiles = new Dictionary<char, string>();
-
+        Teclado_Angular tc = new Teclado_Angular();
 
 
         void ConstruirCodigoMorse()
@@ -105,6 +105,9 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             rtxt_encriptado.Font = font;
             txt_braille_encriptado.Font = new Font(fontCollection.Families[0], 15);
             ConstruirCodigoMorse();
+            tc.txtInput = txt_desencriptado_angular;
+            
+            panel1.Controls.Add(tc);
             
             
             
@@ -359,12 +362,19 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             alfabetoInvertido.AddRange(alfabeto.ToCharArray());
             alfabetoInvertido.Reverse();
             Dictionary<char, char> cifra = new Dictionary<char, char>();
-            for(int i = 0; i < alfabeto.Length;i++)
+            Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
+            txt_encriptar_invertido.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_encriptar_invertido.Text)));
+            for (int i = 0; i < alfabeto.Length;i++)
             {
                 cifra.Add(alfabeto[i], alfabetoInvertido[i]);
             }
             foreach (char c in txt_encriptar_invertido.Text.ToLower())
             {
+                if(c == ' ')
+                {
+                    txt_encriptado_invertido.Text += " ";
+                    continue;
+                }
                 txt_encriptado_invertido.Text += cifra[c];
             }
         }
@@ -506,7 +516,13 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
 
         void TocarMorse()
         {
-            foreach(char c in txt_normal_morse.Text)
+            Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
+            this.Invoke((MethodInvoker)delegate
+            {
+                txt_normal_morse.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_normal_morse.Text)));
+            });
+            
+            foreach (char c in txt_normal_morse.Text)
             {
                 this.Invoke((MethodInvoker)delegate
                 {
@@ -516,14 +532,24 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             string str = txt_normal_morse.Text.ToLower();
             for(int i = 0; i < txt_normal_morse.Text.ToLower().Length;i++)
             {
+                
                 this.Invoke((MethodInvoker)delegate
                 {
                     listBox1.SetSelected(i, true);
                 });
+                if(txt_normal_morse.Text.ToLower()[i] == ' ')
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        listBox1.SetSelected(i, false);
+                    });
+                    continue;
+                }
+
                 string filename = morseFiles[txt_normal_morse.Text.ToLower()[i]];
                 md_morse.URL = filename;
                 md_morse.Ctlcontrols.play();
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 this.Invoke((MethodInvoker)delegate
                 {
                     listBox1.SetSelected(i, false);

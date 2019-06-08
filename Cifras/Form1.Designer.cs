@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txt_normal_morse = new System.Windows.Forms.TextBox();
             this.md_morse = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -87,19 +87,21 @@
             this.btn_treinar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_input = new System.Windows.Forms.TextBox();
-            this.pic_output = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.txt_normal_morse = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.line1 = new Cifras.Line();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.txt_normal_ra = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txt_encriptado_ra = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txt_encriptado_ra = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txt_normal_ra = new System.Windows.Forms.TextBox();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.pic_output = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_desencriptado_angular = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.line1 = new Cifras.Line();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.md_morse)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -110,9 +112,12 @@
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,26 +129,6 @@
             this.label1.Size = new System.Drawing.Size(53, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cifras";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Cifras.Properties.Resources.minimize;
-            this.pictureBox3.Location = new System.Drawing.Point(566, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Cifras.Properties.Resources.error;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tabPage9
             // 
@@ -158,6 +143,21 @@
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Morse";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(7, 133);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(288, 199);
+            this.listBox1.TabIndex = 3;
+            // 
+            // txt_normal_morse
+            // 
+            this.txt_normal_morse.Location = new System.Drawing.Point(7, 29);
+            this.txt_normal_morse.Name = "txt_normal_morse";
+            this.txt_normal_morse.Size = new System.Drawing.Size(288, 20);
+            this.txt_normal_morse.TabIndex = 2;
             // 
             // md_morse
             // 
@@ -692,15 +692,6 @@
             this.txt_input.Size = new System.Drawing.Size(284, 20);
             this.txt_input.TabIndex = 1;
             // 
-            // pic_output
-            // 
-            this.pic_output.Location = new System.Drawing.Point(7, 7);
-            this.pic_output.Name = "pic_output";
-            this.pic_output.Size = new System.Drawing.Size(110, 252);
-            this.pic_output.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_output.TabIndex = 0;
-            this.pic_output.TabStop = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -713,34 +704,12 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Location = new System.Drawing.Point(16, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(600, 400);
             this.tabControl1.TabIndex = 5;
-            // 
-            // txt_normal_morse
-            // 
-            this.txt_normal_morse.Location = new System.Drawing.Point(7, 29);
-            this.txt_normal_morse.Name = "txt_normal_morse";
-            this.txt_normal_morse.Size = new System.Drawing.Size(288, 20);
-            this.txt_normal_morse.TabIndex = 2;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(7, 133);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(288, 199);
-            this.listBox1.TabIndex = 3;
-            // 
-            // line1
-            // 
-            this.line1.BackColor = System.Drawing.Color.Red;
-            this.line1.Location = new System.Drawing.Point(16, 38);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(608, 10);
-            this.line1.TabIndex = 1;
             // 
             // tabPage10
             // 
@@ -757,29 +726,15 @@
             this.tabPage10.Text = "Romano Arabe";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // txt_normal_ra
+            // button2
             // 
-            this.txt_normal_ra.Location = new System.Drawing.Point(6, 28);
-            this.txt_normal_ra.Name = "txt_normal_ra";
-            this.txt_normal_ra.Size = new System.Drawing.Size(330, 20);
-            this.txt_normal_ra.TabIndex = 0;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(342, 31);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(33, 13);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Frase";
-            // 
-            // txt_encriptado_ra
-            // 
-            this.txt_encriptado_ra.Location = new System.Drawing.Point(7, 102);
-            this.txt_encriptado_ra.Name = "txt_encriptado_ra";
-            this.txt_encriptado_ra.ReadOnly = true;
-            this.txt_encriptado_ra.Size = new System.Drawing.Size(329, 20);
-            this.txt_encriptado_ra.TabIndex = 2;
+            this.button2.Location = new System.Drawing.Point(326, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Encriptar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label19
             // 
@@ -790,15 +745,103 @@
             this.label19.TabIndex = 3;
             this.label19.Text = "Encriptado";
             // 
-            // button2
+            // txt_encriptado_ra
             // 
-            this.button2.Location = new System.Drawing.Point(326, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Encriptar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txt_encriptado_ra.Location = new System.Drawing.Point(7, 102);
+            this.txt_encriptado_ra.Name = "txt_encriptado_ra";
+            this.txt_encriptado_ra.ReadOnly = true;
+            this.txt_encriptado_ra.Size = new System.Drawing.Size(329, 20);
+            this.txt_encriptado_ra.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(342, 31);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(33, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Frase";
+            // 
+            // txt_normal_ra
+            // 
+            this.txt_normal_ra.Location = new System.Drawing.Point(6, 28);
+            this.txt_normal_ra.Name = "txt_normal_ra";
+            this.txt_normal_ra.Size = new System.Drawing.Size(330, 20);
+            this.txt_normal_ra.TabIndex = 0;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.label20);
+            this.tabPage11.Controls.Add(this.txt_desencriptado_angular);
+            this.tabPage11.Controls.Add(this.panel1);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(592, 374);
+            this.tabPage11.TabIndex = 10;
+            this.tabPage11.Text = "Codigo Angular Decrypter";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // pic_output
+            // 
+            this.pic_output.Location = new System.Drawing.Point(7, 7);
+            this.pic_output.Name = "pic_output";
+            this.pic_output.Size = new System.Drawing.Size(110, 252);
+            this.pic_output.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_output.TabIndex = 0;
+            this.pic_output.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Cifras.Properties.Resources.minimize;
+            this.pictureBox3.Location = new System.Drawing.Point(566, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Cifras.Properties.Resources.error;
+            this.pictureBox1.Location = new System.Drawing.Point(592, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(7, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 189);
+            this.panel1.TabIndex = 0;
+            // 
+            // txt_desencriptado_angular
+            // 
+            this.txt_desencriptado_angular.Location = new System.Drawing.Point(7, 70);
+            this.txt_desencriptado_angular.Name = "txt_desencriptado_angular";
+            this.txt_desencriptado_angular.ReadOnly = true;
+            this.txt_desencriptado_angular.Size = new System.Drawing.Size(337, 20);
+            this.txt_desencriptado_angular.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(350, 73);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Texto";
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.Red;
+            this.line1.Location = new System.Drawing.Point(16, 38);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(608, 10);
+            this.line1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -817,8 +860,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cifras";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.md_morse)).EndInit();
@@ -838,10 +879,14 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,6 +964,10 @@
         private System.Windows.Forms.TextBox txt_encriptado_ra;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txt_normal_ra;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txt_desencriptado_angular;
     }
 }
 
