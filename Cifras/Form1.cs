@@ -8,8 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
-
-
+using System.Linq;
 namespace Cifras
 {
     public partial class Form1 : Form
@@ -663,6 +662,83 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             {
                 e.Handled = true;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<string> possibilidades = new List<string>();
+
+
+            Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
+            txt_encriptado_pm.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_encriptado_pm.Text)));
+           
+            string encriptado = txt_encriptado_pm.Text.ToLower();
+            int numeroEspacos = -1;
+            for(int i = 1; i <= 3;i++)
+            {
+                
+                string decifrada = "";
+
+                string[] array = encriptado.Split();
+                if(numeroEspacos == -1)
+                {
+                    numeroEspacos = array.Length;
+                }
+
+                foreach (string s in array)
+                {
+                    for (int j = 0; j < s.Length; j += i + 1)
+                    {
+                        decifrada += s[j].ToString();
+                    }
+                    decifrada += " ";
+                }
+                possibilidades.Add(decifrada);
+            }
+
+
+            string stringCorreta = "";
+            foreach (string s in possibilidades)
+            {
+                listBox2.Items.Add(s);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string encriptado = txt_encriptado_metades.Text;
+            string desencriptado = "";
+
+            string[] linhas = encriptado.Split(' ');
+
+            try
+            {
+                if (linhas[0].Length < linhas[1].Length)
+                {
+                    while (linhas[0].Length != linhas[1].Length)
+                    {
+                        linhas[0] += " ";
+                    }
+                }
+                else if(linhas[1].Length < linhas[0].Length)
+                {
+                    while (linhas[0].Length != linhas[1].Length)
+                    {
+                        linhas[1] += " ";
+                    }
+                }
+                for(int i = 0; i < linhas[0].Length;i++)
+                {
+                    desencriptado+= linhas[0][i].ToString() + linhas[1][i];
+                }
+
+                txt_desencriptado_metades.Text = desencriptado;
+            }
+            catch
+            {
+                MessageBox.Show("Formato incorreto");
+            }
+
         }
     }
 }
