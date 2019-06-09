@@ -601,5 +601,68 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             txt_encriptado_ra.Text = txt_encriptado_ra.Text.TrimEnd(' ');
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(txt_letra.Text.Length == 0)
+            {
+                MessageBox.Show("Digite a letra inicial");
+                txt_letra.Focus();
+                return;
+            }
+            char primeiraLetra = Convert.ToChar(txt_letra.Text);
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            int primeiraLetraIndex = alfabeto.IndexOf(primeiraLetra);
+            string transposto = "";
+            for(int i = primeiraLetraIndex; i < alfabeto.Length;i++)
+            {
+                transposto += alfabeto[i];
+            }
+            for(int i = 0; i < primeiraLetraIndex;i++)
+            {
+                transposto += alfabeto[i];
+            }
+            Dictionary<char, char> dictionary = new Dictionary<char, char>();
+            for(int i = 0; i < alfabeto.Length;i++)
+            {
+                dictionary.Add(alfabeto[i],transposto[i]);
+
+            }
+            Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
+            txt_encriptar_at.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_encriptar_at.Text)));
+            txt_encriptado_at.Text = "";
+            foreach (char c in txt_encriptar_at.Text.ToLower())
+            {
+                if(c == ' ')
+                {
+                    txt_encriptado_at.Text += " ";
+                    continue;
+                }
+                txt_encriptado_at.Text += dictionary[c];
+            }
+
+        }
+
+        private void txt_letra_TextChanged(object sender, EventArgs e)
+        { 
+            Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
+            txt_letra.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_letra.Text)));
+            txt_letra.Text = txt_letra.Text.ToLower();
+            
+        }
+
+        private void txt_letra_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txt_letra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string numeros = "1234567890";
+            if(numeros.Contains(e.KeyChar.ToString()) || char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

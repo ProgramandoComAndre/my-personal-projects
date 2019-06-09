@@ -87,6 +87,7 @@
             this.btn_treinar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_input = new System.Windows.Forms.TextBox();
+            this.pic_output = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -95,12 +96,19 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txt_normal_ra = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.pic_output = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_desencriptado_angular = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_desencriptado_angular = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.txt_encriptar_at = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_encriptado_at = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txt_letra = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.line1 = new Cifras.Line();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.md_morse)).BeginInit();
@@ -112,12 +120,13 @@
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage12.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -692,6 +701,15 @@
             this.txt_input.Size = new System.Drawing.Size(284, 20);
             this.txt_input.TabIndex = 1;
             // 
+            // pic_output
+            // 
+            this.pic_output.Location = new System.Drawing.Point(7, 7);
+            this.pic_output.Name = "pic_output";
+            this.pic_output.Size = new System.Drawing.Size(110, 252);
+            this.pic_output.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_output.TabIndex = 0;
+            this.pic_output.TabStop = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -705,6 +723,7 @@
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage11);
+            this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Location = new System.Drawing.Point(16, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -782,14 +801,29 @@
             this.tabPage11.Text = "Codigo Angular Decrypter";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // pic_output
+            // label20
             // 
-            this.pic_output.Location = new System.Drawing.Point(7, 7);
-            this.pic_output.Name = "pic_output";
-            this.pic_output.Size = new System.Drawing.Size(110, 252);
-            this.pic_output.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_output.TabIndex = 0;
-            this.pic_output.TabStop = false;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(350, 73);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Texto";
+            // 
+            // txt_desencriptado_angular
+            // 
+            this.txt_desencriptado_angular.Location = new System.Drawing.Point(7, 70);
+            this.txt_desencriptado_angular.Name = "txt_desencriptado_angular";
+            this.txt_desencriptado_angular.ReadOnly = true;
+            this.txt_desencriptado_angular.Size = new System.Drawing.Size(337, 20);
+            this.txt_desencriptado_angular.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(7, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 189);
+            this.panel1.TabIndex = 0;
             // 
             // pictureBox3
             // 
@@ -811,29 +845,84 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panel1
+            // tabPage12
             // 
-            this.panel1.Location = new System.Drawing.Point(7, 107);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 189);
-            this.panel1.TabIndex = 0;
+            this.tabPage12.Controls.Add(this.label23);
+            this.tabPage12.Controls.Add(this.txt_letra);
+            this.tabPage12.Controls.Add(this.button3);
+            this.tabPage12.Controls.Add(this.label22);
+            this.tabPage12.Controls.Add(this.txt_encriptado_at);
+            this.tabPage12.Controls.Add(this.label21);
+            this.tabPage12.Controls.Add(this.txt_encriptar_at);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(592, 374);
+            this.tabPage12.TabIndex = 11;
+            this.tabPage12.Text = "Alfabeto transposto";
+            this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // txt_desencriptado_angular
+            // txt_encriptar_at
             // 
-            this.txt_desencriptado_angular.Location = new System.Drawing.Point(7, 70);
-            this.txt_desencriptado_angular.Name = "txt_desencriptado_angular";
-            this.txt_desencriptado_angular.ReadOnly = true;
-            this.txt_desencriptado_angular.Size = new System.Drawing.Size(337, 20);
-            this.txt_desencriptado_angular.TabIndex = 1;
+            this.txt_encriptar_at.Location = new System.Drawing.Point(6, 22);
+            this.txt_encriptar_at.Name = "txt_encriptar_at";
+            this.txt_encriptar_at.Size = new System.Drawing.Size(325, 20);
+            this.txt_encriptar_at.TabIndex = 0;
             // 
-            // label20
+            // label21
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(350, 73);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Texto";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(337, 25);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Encriptar";
+            // 
+            // txt_encriptado_at
+            // 
+            this.txt_encriptado_at.Location = new System.Drawing.Point(7, 65);
+            this.txt_encriptado_at.Name = "txt_encriptado_at";
+            this.txt_encriptado_at.Size = new System.Drawing.Size(324, 20);
+            this.txt_encriptado_at.TabIndex = 2;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(340, 71);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(58, 13);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Encriptado";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(256, 92);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Encriptar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txt_letra
+            // 
+            this.txt_letra.Location = new System.Drawing.Point(532, 22);
+            this.txt_letra.MaxLength = 1;
+            this.txt_letra.Name = "txt_letra";
+            this.txt_letra.Size = new System.Drawing.Size(54, 20);
+            this.txt_letra.TabIndex = 5;
+            this.txt_letra.TextChanged += new System.EventHandler(this.txt_letra_TextChanged);
+            this.txt_letra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_letra_KeyPress);
+            this.txt_letra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_letra_KeyUp);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(459, 25);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Primeira letra";
             // 
             // line1
             // 
@@ -879,14 +968,16 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,6 +1059,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_desencriptado_angular;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txt_letra;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txt_encriptado_at;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txt_encriptar_at;
     }
 }
 
