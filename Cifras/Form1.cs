@@ -740,5 +740,50 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
             }
 
         }
+
+        private void line1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            char primeroCaracter;
+            string cifra = "";
+            txt_desencriptado_cmais.Text = "";
+            if(numericUpDown1.Value > 0)
+            {
+                primeroCaracter = alfabeto[Convert.ToInt32((numericUpDown1.Value))];
+            }
+            else if(numericUpDown1.Value < 0)
+            {
+                primeroCaracter = alfabeto[alfabeto.Length - 1 + Convert.ToInt32(numericUpDown1.Value)];
+            }
+            else
+            {
+                MessageBox.Show("Obtem-se o mesmo resultado");
+                return;
+            }
+            for(int i = alfabeto.IndexOf(primeroCaracter); i < alfabeto.Length;i++)
+            {
+                cifra += alfabeto[i];
+            }
+            for(int i = 0; i <= alfabeto.IndexOf(primeroCaracter);i++)
+            {
+                cifra += alfabeto[i];
+            }
+            foreach(char c in txt_encriptado_cmais.Text.ToLower())
+            {
+                if(c == ' ')
+                {
+                    txt_desencriptado_cmais.Text += " ";
+                    continue;
+                }
+                txt_desencriptado_cmais.Text += alfabeto[cifra.IndexOf(c)];
+            }
+        }
+
+        
     }
 }
