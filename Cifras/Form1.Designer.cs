@@ -120,17 +120,18 @@
             this.txt_desencriptado_metades = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.txt_encriptado_metades = new System.Windows.Forms.TextBox();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_desencriptado_cmais = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txt_encriptado_cmais = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.line1 = new Cifras.Line();
-            this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.txt_encriptado_cmais = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txt_desencriptado_cmais = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.md_morse)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -148,10 +149,10 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -752,6 +753,7 @@
             this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Controls.Add(this.tabPage15);
+            this.tabControl1.Controls.Add(this.tabPage16);
             this.tabControl1.Location = new System.Drawing.Point(16, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1057,6 +1059,91 @@
             this.txt_encriptado_metades.Size = new System.Drawing.Size(362, 20);
             this.txt_encriptado_metades.TabIndex = 0;
             // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.button6);
+            this.tabPage15.Controls.Add(this.label31);
+            this.tabPage15.Controls.Add(this.txt_desencriptado_cmais);
+            this.tabPage15.Controls.Add(this.label30);
+            this.tabPage15.Controls.Add(this.numericUpDown1);
+            this.tabPage15.Controls.Add(this.label29);
+            this.tabPage15.Controls.Add(this.txt_encriptado_cmais);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(592, 374);
+            this.tabPage15.TabIndex = 14;
+            this.tabPage15.Text = "Codigo +3";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(456, 75);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Desencriptar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(357, 75);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(76, 13);
+            this.label31.TabIndex = 5;
+            this.label31.Text = "Desencriptado";
+            // 
+            // txt_desencriptado_cmais
+            // 
+            this.txt_desencriptado_cmais.Location = new System.Drawing.Point(7, 69);
+            this.txt_desencriptado_cmais.Name = "txt_desencriptado_cmais";
+            this.txt_desencriptado_cmais.Size = new System.Drawing.Size(341, 20);
+            this.txt_desencriptado_cmais.TabIndex = 4;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(453, 24);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(30, 13);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "Ciclo";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(456, 40);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(354, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(58, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Encriptado";
+            // 
+            // txt_encriptado_cmais
+            // 
+            this.txt_encriptado_cmais.Location = new System.Drawing.Point(7, 24);
+            this.txt_encriptado_cmais.Name = "txt_encriptado_cmais";
+            this.txt_encriptado_cmais.Size = new System.Drawing.Size(341, 20);
+            this.txt_encriptado_cmais.TabIndex = 0;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Cifras.Properties.Resources.minimize;
@@ -1085,90 +1172,15 @@
             this.line1.Size = new System.Drawing.Size(600, 10);
             this.line1.TabIndex = 1;
             // 
-            // tabPage15
+            // tabPage16
             // 
-            this.tabPage15.Controls.Add(this.button6);
-            this.tabPage15.Controls.Add(this.label31);
-            this.tabPage15.Controls.Add(this.txt_desencriptado_cmais);
-            this.tabPage15.Controls.Add(this.label30);
-            this.tabPage15.Controls.Add(this.numericUpDown1);
-            this.tabPage15.Controls.Add(this.label29);
-            this.tabPage15.Controls.Add(this.txt_encriptado_cmais);
-            this.tabPage15.Location = new System.Drawing.Point(4, 22);
-            this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(592, 374);
-            this.tabPage15.TabIndex = 14;
-            this.tabPage15.Text = "Codigo +3";
-            this.tabPage15.UseVisualStyleBackColor = true;
-            // 
-            // txt_encriptado_cmais
-            // 
-            this.txt_encriptado_cmais.Location = new System.Drawing.Point(7, 24);
-            this.txt_encriptado_cmais.Name = "txt_encriptado_cmais";
-            this.txt_encriptado_cmais.Size = new System.Drawing.Size(341, 20);
-            this.txt_encriptado_cmais.TabIndex = 0;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(354, 27);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(58, 13);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "Encriptado";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(456, 40);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(453, 24);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(30, 13);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "Ciclo";
-            // 
-            // txt_desencriptado_cmais
-            // 
-            this.txt_desencriptado_cmais.Location = new System.Drawing.Point(7, 69);
-            this.txt_desencriptado_cmais.Name = "txt_desencriptado_cmais";
-            this.txt_desencriptado_cmais.Size = new System.Drawing.Size(341, 20);
-            this.txt_desencriptado_cmais.TabIndex = 4;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(357, 75);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(76, 13);
-            this.label31.TabIndex = 5;
-            this.label31.Text = "Desencriptado";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(456, 75);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Desencriptar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(592, 374);
+            this.tabPage16.TabIndex = 15;
+            this.tabPage16.Text = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1218,11 +1230,11 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1333,6 +1345,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txt_encriptado_cmais;
+        private System.Windows.Forms.TabPage tabPage16;
     }
 }
 

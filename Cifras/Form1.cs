@@ -13,7 +13,7 @@ namespace Cifras
 {
     public partial class Form1 : Form
     {
-        
+       
         Dictionary<int, string> letrasComNumero = new Dictionary<int, string>();
         PrivateFontCollection fontCollection = new PrivateFontCollection();
         List<Image> animation;
@@ -33,6 +33,7 @@ namespace Cifras
                 string cUpper = c.ToString().ToUpper();
                 string filename = fi.Find(x => x.FullName.Contains("Morse Code Alphabet " + cUpper)).FullName;
                 morseFiles.Add(c, filename);
+               
             }
             string numeros = "0123456789";
             foreach(char c in numeros)
@@ -667,37 +668,50 @@ paraAqui:  return new Tuple<int, int, int>(quadrado, linha, coluna);
         private void button4_Click(object sender, EventArgs e)
         {
             List<string> possibilidades = new List<string>();
-
-
+            listBox2.Items.Clear();
+            
             Encoding destEncoding = Encoding.GetEncoding("iso-8859-8");
             txt_encriptado_pm.Text = destEncoding.GetString(Encoding.Convert(Encoding.UTF8, destEncoding, Encoding.UTF8.GetBytes(txt_encriptado_pm.Text)));
            
             string encriptado = txt_encriptado_pm.Text.ToLower();
             int numeroEspacos = -1;
-            for(int i = 1; i <= 3;i++)
+            int numeroDeLetrasAnterior = -1;
+            string anterior = "";
+            for(int i = 1; i <= 100;i++)
             {
                 
-                string decifrada = "";
+            
 
-                string[] array = encriptado.Split();
-                if(numeroEspacos == -1)
-                {
-                    numeroEspacos = array.Length;
-                }
+                    string decifrada = "";
 
-                foreach (string s in array)
-                {
-                    for (int j = 0; j < s.Length; j += i + 1)
+                    string[] array = encriptado.Split();
+                    if (numeroEspacos == -1)
                     {
-                        decifrada += s[j].ToString();
+                        numeroEspacos = array.Length;
                     }
-                    decifrada += " ";
-                }
-                possibilidades.Add(decifrada);
+
+                    foreach (string s in array)
+                    {
+                        for (int j = 0; j < s.Length; j += i + 1)
+                        {
+                            decifrada += s[j].ToString();
+                        }
+
+                        decifrada += " ";
+                    }
+
+                
+                    if(decifrada != anterior && numeroDeLetrasAnterior != decifrada.Length)
+                        possibilidades.Add(decifrada);
+                    anterior = decifrada;
+                numeroDeLetrasAnterior = decifrada.Length;
+
+
             }
 
 
-            string stringCorreta = "";
+            
+            
             foreach (string s in possibilidades)
             {
                 listBox2.Items.Add(s);
